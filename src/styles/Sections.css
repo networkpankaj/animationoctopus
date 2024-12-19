@@ -1,0 +1,52 @@
+.section .number {
+    font-family: "devil breeze";
+    font-size: 15em;
+    font-weight: bold;
+}
+
+.section .content-fit .title {
+    font-family: "devil breeze";
+    font-size: 5em;
+    font-weight: bold;
+}
+
+#intro .content-fit {
+    display: flex;
+    gap: 30%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#description .content-fit {
+    padding-right: 30%;
+}
+
+#description .number {
+    font-size: 5em;
+}
+
+#description .title {
+    font-size: 7em;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1023px) {
+    #intro .content-fit {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #intro .content-fit {
+        flex-direction: column;
+    }
+    .section .number {
+        font-size: 5em;
+    }
+    .section .content-fit .title {
+        font-size: 2em;
+    }
+    #description .content-fit {
+        padding-right: 0;
+    }
+}

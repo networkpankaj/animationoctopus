@@ -1,0 +1,36 @@
+/* header {
+    padding-block: 1em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(20px);
+    z-index: 100;
+    background-color: #1B1B1B11;
+    background-image: repeating-linear-gradient(
+        to right, transparent 0 500px, #eee1 500px 501px
+    );
+}
+
+header .content-fit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: unset!important;
+    padding-block: unset!important;
+}
+
+header .content-fit nav ul {
+    display: flex;
+    gap: 2em;
+} */
+
+/* .links a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+} */
+
+/* Optional: if you want to prevent text selection during animation */
+/* .links a span {
+  -webkit-user-select: none;
+  user-select: none;
+} */
