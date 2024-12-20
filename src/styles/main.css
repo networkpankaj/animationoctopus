@@ -60,14 +60,14 @@ main {
     box-sizing: border-box;
 }
 
-.section {
+/* .section {
     width: 100%;
     min-height: 100vh;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .content-fit {
     width: min(1200px, 90vw);

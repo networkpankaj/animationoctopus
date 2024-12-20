@@ -5,18 +5,25 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {keyframes: {
-      slideUp: {
-        '0%': { transform: 'translateY(100%)' },
-        '100%': { transform: 'translateY(0)' }
-      }
-    },
+    extend: {
+      blink: {
+        '0%, 100%': { opacity: 1 },
+        '50%': { opacity: 0 },
+      },
+    
+    // keyframes: {
+    //   slideUp: {
+    //     '0%': { transform: 'translateY(100%)' },
+    //     '100%': { transform: 'translateY(0)' }
+    //   }
+    // },
     animation: {
-      'slideUp': 'slideUp 0.5s ease forwards'
+      'blink': 'blink 1s step-end infinite'
     },
       fontFamily: {
-        'montserrat': ['Montserrat', 'sans-serif'],
+        'montserrat': ['Manrope', 'sans-serif'],
       },
+    
     },
   },
   plugins: [],

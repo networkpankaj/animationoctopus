@@ -5,9 +5,9 @@ const Description = () => {
   return (
     <div className="section" id="description">
       <div className="content-fit">
-        <div className="number">02</div>
+        <div className="number">Services</div>
         <div className="des">
-          <div className="title">LUNDEV</div>
+          <div className="title">virtual Octopus</div>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus 
             voluptas a porro libero recusandae quae, aut ratione, incidunt laborum, 
@@ -22,12 +22,12 @@ const Description = () => {
           </p>
         </div>
       </div>
-      <img 
+      {/* <img 
         src="/img/leaf1.png" 
         className="decorate" 
         alt="" 
         style={{ width: '70vw', bottom: 0, right: 0, zIndex: 101 }} 
-      />
+      /> */}
     </div>
   );
 };

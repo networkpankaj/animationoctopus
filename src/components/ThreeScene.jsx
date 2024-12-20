@@ -40,42 +40,43 @@ const ThreeScene = () => {
     topLight.position.set(500, 500, 500);
     scene.add(topLight);
 
-    // Model positions array
+    // Update the model positions array with front-facing rotation
     const arrPositionModel = [
       {
         id: 'banner',
-        position: { x: 0, y: -1, z: 0 },
-        rotation: { x: 0, y: 1.5, z: 0 },
-        scale: 1
+        position: { x: 0.8, y: -0.7, z: 0 },
+        rotation: { x: 0, y: 0, z: 0 },
+        scale: 0.7
       },
       {
         id: "intro",
         position: { x: 1, y: -1, z: -5 },
         rotation: { x: 0.5, y: -0.5, z: 0 },
-        scale: 0.8
+        scale: 0.6
       },
       {
         id: "description",
         position: { x: -1, y: -1, z: -5 },
         rotation: { x: 0, y: 0.5, z: 0 },
-        scale: 0.7
+        scale: 0.5
       },
       {
         id: "contact",
         position: { x: 0.8, y: -1, z: 0 },
         rotation: { x: 0.3, y: -0.5, z: 0 },
-        scale: 0.6
+        scale: 0.4
       },
     ];
 
-    // Model movement function
+    // Update the model movement function
     const modelMove = () => {
       const sections = document.querySelectorAll('.section');
-      let currentSection;
+      let currentSection = 'banner'; // Set default to banner
       
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight / 3) {
+        // Adjust the detection point to account for navbar height
+        if (rect.top <= (window.innerHeight / 3) + 100) { // Added offset for navbar
           currentSection = section.id;
         }
       });
@@ -90,39 +91,55 @@ const ThreeScene = () => {
           x: new_coordinates.position.x,
           y: new_coordinates.position.y,
           z: new_coordinates.position.z,
-          duration: 3,
-          ease: "power1.out"
+          duration: 2, // Reduced duration for smoother transitions
+          ease: "power2.out"
         });
         gsap.to(beeRef.current.rotation, {
           x: new_coordinates.rotation.x,
           y: new_coordinates.rotation.y,
           z: new_coordinates.rotation.z,
-          duration: 3,
-          ease: "power1.out"
+          duration: 2,
+          ease: "power2.out"
         });
         gsap.to(beeRef.current.scale, {
           x: new_coordinates.scale,
           y: new_coordinates.scale,
           z: new_coordinates.scale,
-          duration: 3,
-          ease: "power1.out"
+          duration: 2,
+          ease: "power2.out"
         });
       }
     };
 
-    // Load 3D Model
+    // Update the model loading section with initial scale
     const loader = new GLTFLoader();
     loader.load(
       '/base_basic_pbr.glb',
       function (gltf) {
         const bee = gltf.scene;
+        
+        // Set initial scale for the entire model
+        bee.scale.set(0.7, 0.7, 0.7); // Set initial scale
+        
+        // Set other initial properties
+        const bannerPosition = arrPositionModel[0];
+        bee.position.set(
+          bannerPosition.position.x,
+          bannerPosition.position.y,
+          bannerPosition.position.z
+        );
+        bee.rotation.set(
+          bannerPosition.rotation.x,
+          bannerPosition.rotation.y,
+          bannerPosition.rotation.z
+        );
+        
         beeRef.current = bee;
         scene.add(bee);
 
         const mixer = new THREE.AnimationMixer(bee);
         mixerRef.current = mixer;
         mixer.clipAction(gltf.animations[0]).play();
-        modelMove(); // Initial position
       },
       undefined,
       function (error) {

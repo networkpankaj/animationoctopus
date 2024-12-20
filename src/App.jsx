@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Banner from './components/Banner';
 import Intro from './components/Intro';
 import Description from './components/Description';
+import Highlight from './components/Highlight';
 import Contact from './components/Contact';
 import ThreeScene from './components/ThreeScene';
 // import FirstSection from './components/FirstSection'
@@ -16,6 +17,7 @@ function App() {
       <Header />
       <main>
         <Banner />
+        <Highlight />
         <Intro />
         <Description />
         <Contact />
