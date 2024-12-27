@@ -12,7 +12,7 @@ import './styles/main.css';
 import About from './components/About';
 import LocomotiveScroll from 'locomotive-scroll';
 import Eyes from './components/Eyes';
-import ThirdSection from './components/thirdSection';
+// import ThirdSection from './components/thirdSection';
 
 function App() {
   const locomotiveScroll = new LocomotiveScroll();
@@ -27,7 +27,7 @@ function App() {
         <Eyes />
         <Intro />
         <Description />
-        <ThirdSection />
+        {/* <ThirdSection /> */}
         <Contact />
         <ThirdSection />
         {/* <FirstSection /> */}
