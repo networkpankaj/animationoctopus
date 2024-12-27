@@ -31,6 +31,7 @@ const ThreeScene = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     containerRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
+    
 
     // Lights
     const ambientLight = new THREE.AmbientLight(0xffffff, 1.3);
@@ -113,37 +114,51 @@ const ThreeScene = () => {
 
     // Update the model loading section with initial scale
     const loader = new GLTFLoader();
+    const textureLoader = new THREE.TextureLoader();
+
     loader.load(
-      '/base_basic_pbr.glb',
+      '/you_img.glb',
       function (gltf) {
-        const bee = gltf.scene;
+        console.log('Model loaded successfully:', gltf);
+        const model = gltf.scene;
+        // Enable shadows and fix materials
+        model.traverse((child) => {
+          if (child.isMesh) {
+            child.castShadow = true;
+            child.receiveShadow = true;
+            // Check if materials are loaded
+            console.log('Material:', child.material);
+          }
+        });
         
         // Set initial scale for the entire model
-        bee.scale.set(0.7, 0.7, 0.7); // Set initial scale
+        model.scale.set(0.7, 0.7, 0.7); // Set initial scale
         
         // Set other initial properties
         const bannerPosition = arrPositionModel[0];
-        bee.position.set(
+        model.position.set(
           bannerPosition.position.x,
           bannerPosition.position.y,
           bannerPosition.position.z
         );
-        bee.rotation.set(
+        model.rotation.set(
           bannerPosition.rotation.x,
           bannerPosition.rotation.y,
           bannerPosition.rotation.z
         );
         
-        beeRef.current = bee;
-        scene.add(bee);
+        beeRef.current = model;
+        scene.add(model);
 
-        const mixer = new THREE.AnimationMixer(bee);
+        const mixer = new THREE.AnimationMixer(model);
         mixerRef.current = mixer;
         mixer.clipAction(gltf.animations[0]).play();
       },
-      undefined,
+      function (progress) {
+        console.log('Loading progress:', (progress.loaded / progress.total * 100) + '%');
+      },
       function (error) {
-        console.error('An error occurred loading the model:', error);
+        console.error('Error loading model:', error);
       }
     );
 

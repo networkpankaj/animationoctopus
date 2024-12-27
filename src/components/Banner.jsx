@@ -174,7 +174,7 @@ const Banner = () => {
   };
 
   return (
-    <div className='w-full h-screen bg-[#fdf7ecd8] pt-2 relative overflow-hidden'>
+    <div data-scroll data-scroll-section data-scroll-speed="-.3" className=' w-full h-screen bg-[#fdf7ecd8] pt-2 relative overflow-hidden'>
       {/* Add gradient overlay */}
       <div className="gradient-bg absolute inset-0 pointer-events-none" />
       

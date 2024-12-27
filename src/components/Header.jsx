@@ -39,7 +39,7 @@ const Header = () => {
           >
             <span className="inline-block transition-transform duration-300 ease-in-out group-hover:-translate-y-full">
               {item}
-            </span>
+            </span> 
             <span className="inline-block absolute top-full left-0 transition-transform duration-300 ease-in-out group-hover:-translate-y-full">
               {item}
             </span>

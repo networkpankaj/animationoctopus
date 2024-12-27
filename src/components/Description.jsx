@@ -1,33 +1,51 @@
-import React from 'react';
-import '../styles/Sections.css';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 const Description = () => {
   return (
-    <div className="section" id="description">
-      <div className="content-fit">
-        <div className="number">Services</div>
-        <div className="des">
-          <div className="title">virtual Octopus</div>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus 
-            voluptas a porro libero recusandae quae, aut ratione, incidunt laborum, 
-            necessitatibus similique enim doloremque ex. Laudantium obcaecati 
-            aspernatur doloremque illo beatae, maxime hic itaque consequatur nisi 
-            accusantium veritatis, voluptatem ratione! Placeat numquam nisi 
-            reiciendis harum quibusdam tempore eaque deleniti accusantium, veniam 
-            quae eos sed, asperiores laborum corporis odit mollitia consequatur 
-            adipisci? Quibusdam quis eos debitis non esse blanditiis laudantium 
-            rerum odit tempora? Corrupti maiores velit consequuntur cupiditate 
-            reiciendis similique provident repudiandae.
-          </p>
+    <div className="section min-h-screen bg-[#fdf7ecd8] py-20" id="description">
+      <div className="max-w-[1400px] mx-auto px-20">
+        <div className="flex items-center justify-between gap-20">
+          {/* Left Column - Image */}
+          <div className="w-1/2">
+            <div className="relative w-full aspect-square rounded-2xl overflow-hidden">
+              <img 
+                src="/path-to-your-image.jpg" 
+                alt="Virtual Octopus Services" 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+              {/* Optional: Add overlay effect */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            </div>
+          </div>
+
+          {/* Right Column - Content */}
+          <div className="w-1/2">
+          <div className="mb-6">
+              <span className="text-7xl font-bold text-[#3B67B6]">02</span>
+            </div>
+            <h2 className="text-5xl font-bold mb-8 text-zinc-800">
+              Virtual Octopus
+            </h2>
+            <p className="text-zinc-600 leading-relaxed mb-4">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus 
+              voluptas a porro libero recusandae quae, aut ratione, incidunt laborum, 
+              necessitatibus similique enim doloremque ex.
+            </p>
+            <p className="text-zinc-600 leading-relaxed">
+              Laudantium obcaecati aspernatur doloremque illo beatae, 
+              maxime hic itaque consequatur nisi accusantium veritatis, 
+              voluptatem ratione!
+            </p>
+            
+            {/* Optional: Add a button or call to action */}
+            <button className="mt-8 px-8 py-3 bg-[#3B67B6] text-white rounded-lg
+              hover:bg-[#2d4f8c] transition-colors duration-300">
+              Our Services
+            </button>
+          </div>
         </div>
       </div>
-      {/* <img 
-        src="/img/leaf1.png" 
-        className="decorate" 
-        alt="" 
-        style={{ width: '70vw', bottom: 0, right: 0, zIndex: 101 }} 
-      /> */}
     </div>
   );
 };

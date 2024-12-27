@@ -48,7 +48,7 @@ main {
 
     background-size: 100%;
 } 
-
+/* 
 *::-webkit-scrollbar {
     width: 0;
 }
@@ -58,7 +58,7 @@ main {
     margin: 0;
     list-style: none;
     box-sizing: border-box;
-}
+} */
 
 /* .section {
     width: 100%;

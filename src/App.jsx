@@ -9,8 +9,13 @@ import ThreeScene from './components/ThreeScene';
 // import FirstSection from './components/FirstSection'
 // import RippleBackground from './components/RippleBackground';
 import './styles/main.css';
+import About from './components/About';
+import LocomotiveScroll from 'locomotive-scroll';
+import Eyes from './components/Eyes';
+import ThirdSection from './components/thirdSection';
 
 function App() {
+  const locomotiveScroll = new LocomotiveScroll();
   return (
     <>
       {/* <RippleBackground /> */}
@@ -18,9 +23,13 @@ function App() {
       <main>
         <Banner />
         <Highlight />
+        <About />
+        <Eyes />
         <Intro />
         <Description />
+        <ThirdSection />
         <Contact />
+        <ThirdSection />
         {/* <FirstSection /> */}
       </main>
       <ThreeScene />
