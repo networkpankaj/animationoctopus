@@ -4,15 +4,11 @@ import Banner from './components/Banner';
 import Intro from './components/Intro';
 import Description from './components/Description';
 import Highlight from './components/Highlight';
-import Contact from './components/Contact';
 import ThreeScene from './components/ThreeScene';
-// import FirstSection from './components/FirstSection'
-// import RippleBackground from './components/RippleBackground';
 import './styles/main.css';
 import About from './components/About';
 import LocomotiveScroll from 'locomotive-scroll';
-import Eyes from './components/Eyes';
-// import ThirdSection from './components/thirdSection';
+import Footer from './components/Footer';
 
 function App() {
   const locomotiveScroll = new LocomotiveScroll();
@@ -24,11 +20,11 @@ function App() {
         <Banner />
         <Highlight />
         <About />
-        <Eyes />
+        {/* <Eyes /> */}
         <Intro />
         <Description />
         {/* <ThirdSection /> */}
-        <Contact />
+        <Footer />
         {/* <ThirdSection /> */}
         {/* <FirstSection /> */}
       </main>
