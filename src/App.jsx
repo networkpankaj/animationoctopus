@@ -29,7 +29,7 @@ function App() {
         <Description />
         {/* <ThirdSection /> */}
         <Contact />
-        <ThirdSection />
+        {/* <ThirdSection /> */}
         {/* <FirstSection /> */}
       </main>
       <ThreeScene />
